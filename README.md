@@ -1,44 +1,54 @@
-# Moonroom 1.2 — đưa lên GitHub Pages
+# Moonroom 1.3 — Những trang sách dưới ánh trăng
 
-Bản web tĩnh đã build sẵn. Không cần API key, backend hay cài Node để triển khai.
+Bản nâng cấp từ Moonroom 1.2, dùng được trên GitHub Pages. Website đã build sẵn; không cần API key hoặc backend.
 
-## Triển khai nhanh
+## Những gì đã thêm
 
-1. Giải nén Moonroom-GitHub-Pages-v1.2.zip trên máy tính.
-2. Trong tài khoản GitHub AiGiaGiaD3, tạo repository mới tên `moonroom-tarot`, chọn Public để dùng GitHub Pages với gói Free. Có thể chọn tên khác.
-3. Chọn **Add file → Upload files**, tải các file và thư mục BÊN TRONG gói đã giải nén lên repo, rồi Commit changes. File `index.html` phải nằm ngay ở gốc repo, cùng cấp với `assets/` và `cards/`. Không tải nguyên file ZIP thay cho nội dung website.
-4. Vào **Settings → Pages → Build and deployment**. Chọn **Source: Deploy from a branch**, **Branch: main**, thư mục **/(root)** rồi **Save**. Nếu nhánh mặc định có tên khác, chọn nhánh chứa các file vừa tải lên.
-5. Chờ GitHub hoàn tất triển khai, sau đó mở địa chỉ hiển thị trong Settings → Pages. Với tên repo gợi ý, địa chỉ dự kiến là `https://aigiagiad3.github.io/moonroom-tarot/` (chưa được triển khai trong gói này).
+- 78 lá bài bay từ tâm bàn, trải thành lưới. Lá đã chọn sáng lên và được đánh số; chọn đủ ba lá sẽ chuyển sang màn lật bài.
+- Lật bài 3D hai mặt, quầng sáng và chuyển cảnh nhẹ.
+- Minh họa vector một người xem bài khoác áo choàng, giấu mặt dưới mũ trùm, mở sách giữa hai ngọn nến. Trang sách và ký tự có chuyển động.
+- Sách giải nghĩa ba trang: ảnh lá bài, ý nghĩa và câu hỏi xuất hiện lần lượt. Dùng tab, nút trước/sau hoặc phím mũi tên/Home/End để chuyển trang khi đang tập trung vào tab.
+- Cổng phép thuật, tia sáng và tiếng chuông khi sao chép thành công. Sau đó có liên kết mở ChatGPT, Claude và Gemini; bạn vẫn tự dán và gửi.
+- Âm nền nhẹ, chuông khi chọn/lật bài, tiếng lướt trang. Âm thanh được tạo bằng Web Audio, không cần tải file nhạc. Mặc định tắt; bật bằng nút trên đầu trang. Tự tạm ngừng khi tab bị ẩn.
+- Nút giảm chuyển động và hỗ trợ cài đặt giảm chuyển động của thiết bị. Không có hiệu ứng nhấp nháy nhanh.
+- Bố cục sách xếp dọc trên điện thoại; ô nhập chữ 16 px; các lá bài có vùng chạm từ khoảng 45 px ở độ rộng 320–390 px đã kiểm tra.
 
-Có thể bỏ qua `SOURCE.zip` và README khi tải website; chúng chỉ để lưu mã nguồn và hướng dẫn. Giữ nguyên thư mục `cards` và `assets`. File `.nojekyll` có thể bị ẩn trong trình quản lý file; nếu cần, dùng **Add file → Create new file**, đặt tên `.nojekyll` và lưu.
+Giữ đủ 78 ảnh bài, nội dung diễn giải, nhật ký, tải phiên đọc, lựa chọn riêng tư khi sao chép và mã kiểm tra thứ tự bài.
 
-Hướng dẫn chính thức: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+## Chạy thử trên máy
 
-## Các thành phần
+Nếu đã cài Node.js, nhấp đúp `Xem-truoc.cmd` trên Windows. Giữ cửa sổ đó mở rồi truy cập http://127.0.0.1:4173. Nhấn Ctrl+C để dừng. Hoặc chạy `node preview.mjs` trong thư mục này.
 
-- `index.html`, `assets/`: giao diện đã build.
-- `cards/`: đủ 78 ảnh bài, lưu cùng website.
-- `card-attributions.json`: nguồn và thông tin quyền sử dụng ảnh.
-- `favicon.svg`: biểu tượng website.
-- `SOURCE.zip`: mã nguồn React/TypeScript, khóa phiên bản dependencies, kiểm thử và hướng dẫn build.
+Không mở `index.html` bằng cách nhấp đúp: website cần HTTP/HTTPS để tải module và dùng các chức năng trình duyệt.
 
-## Bản 1.2 đã thay đổi gì?
+## Cập nhật website GitHub Pages
 
-Rà lại lời dẫn, tiêu đề và nút theo tiếng Việt tự nhiên. “Bước vào phòng bài” thành “Ngồi vào bàn Tarot”; “Phòng bài” thành “Bàn Tarot”. Các phần mở đầu, nhìn lại ba lá, ghi chú và dùng AI đều đã sửa. Giữ đủ 78 lá, chiều xuôi, chọn 3 lá, tự quan sát trước khi xem ý nghĩa, nhật ký và sao chép nội dung sang AI tùy chọn.
+1. Giải nén gói ZIP.
+2. Thay `index.html`, `assets/`, `cards/`, `favicon.svg`, `card-attributions.json` và `.nojekyll` trong nơi đang lưu website bằng bản mới. File `index.html` phải ở gốc cùng cấp với `assets/` và `cards/`.
+3. Lưu thay đổi và chờ website triển khai lại như cấu hình hiện có. Nếu trình duyệt còn hiện bản cũ, tải lại bỏ qua bộ nhớ đệm.
 
-Chuyển ứng dụng thành website tĩnh, bỏ phần máy chủ và tích hợp dành riêng cho nơi lưu trữ cũ. Đường dẫn tương đối hoạt động dưới thư mục repo GitHub Pages.
+`SOURCE.zip`, các file hướng dẫn, `preview.mjs` và `Xem-truoc.cmd` chỉ để chạy thử/phát triển, không bắt buộc tải lên GitHub Pages. Bản này chưa được tự động triển khai lên tài khoản GitHub của bạn.
 
-## Dữ liệu của người dùng
+## Mã nguồn
 
-Nhật ký nằm trong trình duyệt, không gửi lên repo và không đồng bộ giữa thiết bị. Khi chuyển từ địa chỉ Moonroom cũ sang GitHub Pages, nhật ký cũ KHÔNG tự chuyển sang. Hãy tải các phiên cần giữ ở trang cũ; file JSON là bản lưu để đọc, bản này chưa có chức năng nhập lại JSON. Xóa dữ liệu trình duyệt sẽ xóa nhật ký.
+`SOURCE.zip` chứa React/TypeScript, thư viện được khóa phiên bản, 78 ảnh và các kiểm thử logic. Giải nén rồi chạy:
 
-Sao chép để đọc cùng AI không tự gửi dữ liệu đi. Người dùng tự chọn thông tin, sao chép và dán vào dịch vụ AI họ muốn. Google Fonts có thể được tải qua mạng; nếu không tải được, giao diện dùng font dự phòng. Ảnh bài nằm trong gói, không phụ thuộc đường dẫn ảnh ngoài.
+```sh
+npm ci
+npm run dev
+npm run build
+```
 
-Mở website qua HTTPS của GitHub Pages. Nhấp đúp index.html bằng file:// không phải cách chạy được hỗ trợ.
+`dist/` là website đã build. Vite dùng đường dẫn tương đối để hoạt động dưới thư mục repo.
 
-## Kiểm tra đã hoàn tất
+## Nhật ký và riêng tư
 
-- TypeScript và build production thành công.
-- Kiểm thử 78 lá, xào bài, mã kiểm tra và chia sẻ thông tin có lựa chọn: đạt.
-- Trình duyệt: mở từ đường dẫn con /moonroom/, ảnh hiển thị, đi qua rút/lật/đọc bài và lưu nhật ký: đạt.
-- Chưa triển khai lên GitHub; chưa kiểm thử trên iPhone thực tế.
+Nhật ký dùng cùng khóa lưu trữ với bản 1.2; nâng cấp tại cùng địa chỉ không chủ động xóa nhật ký. Đổi tên miền/cổng/trình duyệt sẽ dùng vùng lưu trữ khác. Phiên đã lưu vẫn chỉ nằm trên thiết bị, không tự đồng bộ. Hãy tải các phiên quan trọng về trước khi thay đổi nơi chạy website.
+
+Sao chép không tự gửi dữ liệu tới AI. Chỉ các trường riêng tư bạn chọn mới được đưa vào nội dung sao chép. Khi trình duyệt từ chối clipboard, có ô xem trước để sao chép thủ công và nút tải TXT.
+
+Google Fonts có thể tải qua mạng; nếu không có mạng, giao diện dùng font dự phòng. Ảnh bài, minh họa, chuyển động và âm thanh không phụ thuộc dịch vụ bên ngoài.
+
+## Kiểm thử
+
+Xem `KIEM-THU.md`. Đã kiểm tra trên Chrome desktop với nhiều kích thước màn hình và mô phỏng cảm ứng/giảm chuyển động; chưa kiểm thử trên thiết bị iPhone/Android thật. Độ mượt thực tế tùy thiết bị; có chế độ chuyển động nhẹ.
